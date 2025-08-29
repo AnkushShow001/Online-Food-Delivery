@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yum.in - Discover & Order Food</title>
+    
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    
+    <script>
+      
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    
+    <style>
+       
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none; 
+            scrollbar-width: none;  
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="text-2xl font-extrabold text-red-500">
+                    yum.in
+                </div>
+
+                
+                <div class="hidden lg:flex items-center border rounded-lg shadow-sm w-full max-w-2xl">
+                    <div class="flex items-center pl-4 pr-2 border-r">
+                        <svg class="text-red-500 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <input type="text" placeholder="Mumbai" class="p-3 w-40 focus:outline-none" />
+                        <svg class="text-gray-500 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-9"/></svg>
+                    </div>
+                    <div class="flex items-center flex-grow">
+                        <svg class="text-gray-500 w-5 h-5 mx-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search for restaurant, cuisine or a dish" class="p-3 w-full focus:outline-none" />
+                    </div>
+                </div>
+                
+                
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-red-500 font-semibold transition-colors duration-300">Log in</button>
+                    <button class="text-gray-600 hover:text-red-500 font-semibold transition-colors duration-300">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+       
+        <div class="relative h-96 bg-cover bg-center" style="background-image: url('https://placehold.co/1600x600/333333/FFFFFF?text=Delicious+Food+Awaits')">
+            <div class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center p-4">
+                <h1 class="text-5xl font-extrabold mb-2">yum.in</h1>
+                <p class="text-2xl font-light">Discover the best food & drinks in India</p>
+                 <div class="mt-8 flex items-center bg-white rounded-lg shadow-lg w-full max-w-lg">
+                    <div class="flex items-center pl-4 pr-2">
+                        <svg class="text-red-500 w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <input type="text" placeholder="Mumbai" class="p-3 w-32 focus:outline-none text-gray-800" />
+                    </div>
+                    <div class="flex items-center flex-grow border-l">
+                        <svg class="text-gray-500 w-5 h-5 mx-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" placeholder="Search for a restaurant..." class="p-3 w-full focus:outline-none text-gray-800" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          
+         
+          <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Inspiration for your first order</h2>
+            <div id="categories-container" class="flex space-x-4 md:space-x-8 overflow-x-auto pb-4 -mx-4 px-4 no-scrollbar">
+             
+            </div>
+          </section>
+
+          
+          <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Top brands for you</h2>
+             <div id="top-brands-container" class="flex space-x-4 md:space-x-8 overflow-x-auto pb-4 -mx-4 px-4 no-scrollbar">
+              
+            </div>
+          </section>
+
+   
+          <section>
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Restaurants in Mumbai</h2>
+            <div id="restaurants-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+             
+            </div>
+          </section>
+
+        </div>
+    </main>
+    
+ 
+    <footer class="bg-gray-100 pt-12 pb-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-xl font-bold text-red-500 mb-4">yum.in</h3>
+                </div>
+                <div class="md:col-span-4 grid grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3">ABOUT YUM.IN</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#" class="hover:text-red-500">Who We Are</a></li>
+                            <li><a href="#" class="hover:text-red-500">Blog</a></li>
+                            <li><a href="#" class="hover:text-red-500">Work With Us</a></li>
+                            <li><a href="#" class="hover:text-red-500">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3">FOR RESTAURANTS</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#" class="hover:text-red-500">Partner With Us</a></li>
+                            <li><a href="#" class="hover:text-red-500">Apps For You</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3">LEARN MORE</h4>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#" class="hover:text-red-500">Privacy</a></li>
+                            <li><a href="#" class="hover:text-red-500">Security</a></li>
+                            <li><a href="#" class="hover:text-red-500">Terms</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3">SOCIAL LINKS</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-600 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                            <a href="#" class="text-gray-600 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 1.4 2.8 3.2 3 5.2-1.4 1.2-3.1 2-4.9 2.4-1.1 1.1-2.5 2-4.1 2.5-2 .6-4.2.3-6.1-.8-2.5-1.5-4.5-4-5.5-6.8a15 15 0 0 1-1.1-5.2c1.5.8 3.2 1.2 4.9 1.2 1.1 0 2.2-.3 3.2-.8-1.2-1.2-2-2.8-2-4.5.2-1.5 1.1-2.8 2.3-3.6 1.4-.9 3.1-.9 4.6.1.7.5 1.3 1.1 1.7 1.8.2.3.4.6.5.9.3.8.5 1.6.5 2.5 0 2.2-1.2 4.3-3.1 5.5z"/></svg></a>
+                            <a href="#" class="text-gray-600 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-6 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 yum.in. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            
+          
+            const categories = [
+              { name: 'Biryani', image: 'https://placehold.co/150x150/FFF4E6/333333?text=Biryani' },
+              { name: 'Pizza', image: 'https://placehold.co/150x150/FFE6E6/333333?text=Pizza' },
+              { name: 'Burger', image: 'https://placehold.co/150x150/E6F2FF/333333?text=Burger' },
+              { name: 'Thali', image: 'https://placehold.co/150x150/E6FFE6/333333?text=Thali' },
+              { name: 'Rolls', image: 'https://placehold.co/150x150/F2E6FF/333333?text=Rolls' },
+              { name: 'Noodles', image: 'https://placehold.co/150x150/FFFFE6/333333?text=Noodles' },
+              { name: 'South Indian', image: 'https://placehold.co/150x150/E6E6FF/333333?text=Dosa' },
+            ];
+
+            const topBrands = [
+                { name: "McDonald's", image: 'https://placehold.co/150x150/FFC72C/000000?text=McD' },
+                { name: "Domino's Pizza", image: 'https://placehold.co/150x150/006491/FFFFFF?text=Domino%27s' },
+                { name: "Subway", image: 'https://placehold.co/150x150/009743/FFFFFF?text=Subway' },
+                { name: "Burger King", image: 'https://placehold.co/150x150/D62300/FFFFFF?text=BK' },
+                { name: "KFC", image: 'https://placehold.co/150x150/A3080C/FFFFFF?text=KFC' },
+                { name: "Pizza Hut", image: 'https://placehold.co/150x150/EE3A43/FFFFFF?text=Pizza+Hut' },
+            ];
+
+            const restaurants = [
+              { id: 1, name: 'Funny Food Store', image: 'https://placehold.co/400x300/8B0000/FFFFFF?text=Funny+Food+Store', cuisine: ['North Indian', 'Mughlai'], rating: 4.5, deliveryTime: '30-35 min', priceForOne: 350 },
+              { id: 2, name: 'Bukhara', image: 'https://placehold.co/400x300/DAA520/000000?text=Bukhara+Grill', cuisine: ['North Indian', 'Kebab'], rating: 4.8, deliveryTime: '45-50 min', priceForOne: 1200 },
+              { id: 3, name: 'Saravana Bhavan', image: 'https://placehold.co/400x300/4CAF50/FFFFFF?text=Saravana+Bhavan', cuisine: ['South Indian', 'Vegetarian'], rating: 4.6, deliveryTime: '25-30 min', priceForOne: 250 },
+              { id: 4, name: 'Wow! Momo', image: 'https://placehold.co/400x300/FF5722/FFFFFF?text=Wow!+Momo', cuisine: ['Tibetan', 'Chinese', 'Fast Food'], rating: 4.2, deliveryTime: '20-25 min', priceForOne: 180 },
+              { id: 5, name: 'Haldiram\'s', image: 'https://placehold.co/400x300/FF9800/000000?text=Haldiram%27s+Sweets', cuisine: ['North Indian', 'Street Food', 'Sweets'], rating: 4.4, deliveryTime: '30-35 min', priceForOne: 200 },
+              { id: 6, name: 'Indian Accent', image: 'https://placehold.co/400x300/607D8B/FFFFFF?text=Indian+Accent', cuisine: ['Modern Indian', 'Fine Dining'], rating: 4.9, deliveryTime: '50-55 min', priceForOne: 2500 },
+              { id: 7, name: 'Paradise Biryani', image: 'https://placehold.co/400x300/006400/FFFFFF?text=Paradise+Biryani', cuisine: ['Biryani', 'Hyderabadi'], rating: 4.3, deliveryTime: '35-40 min', priceForOne: 400 },
+              { id: 8, name: 'The Big Chill Cakery', image: 'https://placehold.co/400x300/E91E63/FFFFFF?text=Big+Chill+Cakery', cuisine: ['Desserts', 'Bakery'], rating: 4.7, deliveryTime: '25-30 min', priceForOne: 300 },
+              { id: 9, name: 'Khan Chacha', image: 'https://placehold.co/400x300/795548/FFFFFF?text=Khan+Chacha+Rolls', cuisine: ['Rolls', 'Kebab', 'North Indian'], rating: 4.4, deliveryTime: '25-30 min', priceForOne: 300 },
+              { id: 10, name: 'Naturals Ice Cream', image: 'https://placehold.co/400x300/03A9F4/FFFFFF?text=Naturals+Ice+Cream', cuisine: ['Ice Cream', 'Desserts'], rating: 4.8, deliveryTime: '15-20 min', priceForOne: 150 },
+              { id: 11, name: 'Bikanervala', image: 'https://placehold.co/400x300/FFEB3B/000000?text=Bikanervala', cuisine: ['North Indian', 'South Indian', 'Sweets'], rating: 4.1, deliveryTime: '30-35 min', priceForOne: 220 },
+              { id: 12, name: 'Faasos - Wraps & Rolls', image: 'https://placehold.co/400x300/F44336/FFFFFF?text=Faasos+Wraps', cuisine: ['Rolls', 'Fast Food'], rating: 4.0, deliveryTime: '20-25 min', priceForOne: 250 }
+            ];
+
+           
+
+            const categoriesContainer = document.getElementById('categories-container');
+            const topBrandsContainer = document.getElementById('top-brands-container');
+            const restaurantsContainer = document.getElementById('restaurants-container');
+
+           
+            function renderCircularItems(container, items) {
+                let itemsHTML = '';
+                items.forEach(item => {
+                    itemsHTML += `
+                        <div class="flex-shrink-0 flex flex-col items-center justify-center text-center w-28 cursor-pointer group">
+                            <div class="w-24 h-24 rounded-full overflow-hidden shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                                <img 
+                                    src="${item.image}" 
+                                    alt="${item.name}" 
+                                    class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/150x150/cccccc/ffffff?text=Error';"
+                                />
+                            </div>
+                            <p class="mt-2 font-semibold text-gray-700">${item.name}</p>
+                        </div>
+                    `;
+                });
+                container.innerHTML = itemsHTML;
+            }
+
+          
+            function renderRestaurantCards(container, items) {
+                let itemsHTML = '';
+                items.forEach(restaurant => {
+                    itemsHTML += `
+                        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer">
+                            <div class="relative">
+                                <img 
+                                    class="w-full h-48 object-cover" 
+                                    src="${restaurant.image}" 
+                                    alt="${restaurant.name}" 
+                                    onerror="this.onerror=null;this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';"
+                                />
+                                <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/60 to-transparent w-full h-1/2"></div>
+                                <span class="absolute bottom-2 right-2 text-white font-bold text-lg bg-black/50 px-2 py-1 rounded-md">${restaurant.deliveryTime}</span>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <h3 class="text-lg font-bold text-gray-800 truncate">${restaurant.name}</h3>
+                                    <div class="flex items-center bg-green-600 text-white px-2 py-1 rounded-md text-sm font-semibold">
+                                        ${restaurant.rating.toFixed(1)}
+                                        <svg class="w-4 h-4 ml-1 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between items-center text-gray-600 text-sm">
+                                    <p class="truncate w-3/5">${restaurant.cuisine.join(', ')}</p>
+                                    <p class="font-semibold">₹${restaurant.priceForOne} for one</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = itemsHTML;
+            }
+            
+          
+            renderCircularItems(categoriesContainer, categories);
+            renderCircularItems(topBrandsContainer, topBrands);
+            renderRestaurantCards(restaurantsContainer, restaurants);
+        });
+    </script>
+
+</body>
+</html>
